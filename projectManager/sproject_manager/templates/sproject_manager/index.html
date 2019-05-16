@@ -1,10 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <p>Hello there.</p>
-</body>
-</html>
+{% extends 'sproject_manager/base.html' %}
+
+{% block content %}
+
+<div class="container">
+{% if project_list %}
+    {% for proj in project_list %}
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">{{ proj.name }}</th>
+              <th scope="col">Tasks</th>
+              <th scope="col">Start Date</th>
+              <th scope="col">End Date</th>
+              <th scope="col">Status</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for task in task_list %}
+            {% if task.project.id == proj.id %}
+            <tr>
+              <th scope="row"></th>
+              <th>{{ task.name }}</th>
+              <td>{{ task.start_date }}</td>
+              <td>{{ task.end_date }}</td>
+              <td>{{ task.status }}</td>
+              <td><a href="{% url 'project_manager:task_item' task.id %}"><button class="btn btn-info" >View</button></a> </td>
+            </tr>
+            {% endif %}
+          {% endfor %}
+          </tbody>
+        </table>
+    {% endfor %}
+</div>
+
+{% else %}
+<p>Sorry, pal</p>
+{% endif %}
+
+
+
+{% endblock %}

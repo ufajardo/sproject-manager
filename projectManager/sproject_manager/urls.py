@@ -16,7 +16,8 @@ Including another URLconf
 from . import views
 from django.urls import path, include
 
-app_name='project_manager'
+app_name = 'project_manager'
 urlpatterns = [
     path('', views.index, name='index'),
+    path('task-details/<int:id>/', views.task_item, name='task_item'),
 ]
