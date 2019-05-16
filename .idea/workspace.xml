@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f05e2d69-dd22-4fdb-b05f-395af15bb3b1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/projectManager/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projectManager/projectManager/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projectManager/projectManager/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projectManager/projectManager/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projectManager/projectManager/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projectManager/sproject_manager/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projectManager/sproject_manager/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projectManager/sproject_manager/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projectManager/sproject_manager/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projectManager/sproject_manager/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projectManager/sproject_manager/templates/sproject_manager/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projectManager/sproject_manager/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projectManager/sproject_manager/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projectManager/sproject_manager/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="f05e2d69-dd22-4fdb-b05f-395af15bb3b1" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,6 +140,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/projectManager/sproject_manager" />
   </component>
   <component name="RecentsManager">
@@ -192,7 +178,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="46" y="4" width="1046" height="690" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
