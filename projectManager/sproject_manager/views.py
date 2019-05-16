@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Project, Task
-
+from .forms import TaskForm
 # Create your views here.
 
 def index(request):
@@ -22,9 +22,12 @@ def task_item(request, id):
         if 'delete' in request.POST:
             task.delete()
             return render(request, 'sproject_manager/index.html')
+    else:
+        form = TaskForm()
 
     context = {
         'task': task,
+        'form': form,
     }
 
     return render(request, 'sproject_manager/task-details.html', context)

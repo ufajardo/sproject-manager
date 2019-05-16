@@ -4,7 +4,13 @@
 
 <div class="container">
   <h1>{{ task.name }}</h1>
-  <button class="btn btn-danger" href="">Delete</button>
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+  </form>
+
 </div>
 
 {% endblock %}
