@@ -19,5 +19,6 @@ from django.urls import path, include
 app_name = 'project_manager'
 urlpatterns = [
     path('', views.index, name='index'),
-    path('task-details/<int:id>/', views.task_item, name='task_item'),
+    path('create-task/', views.create_task, name='create-task'),
+    path('task-details/<int:id>/', views.update_task, name='update-task'),
 ]

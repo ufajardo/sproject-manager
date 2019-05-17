@@ -3,12 +3,13 @@
 {% block content %}
 
 <div class="container">
-  <h1>{{ task.name }}</h1>
-
+  <a href="{% url 'project_manager:index' %}"><button class="btn btn-primary">Back</button></a>
+  <h1>View details/Update</h1>
+  <p>Looking at details for {{ task.name }}</p>
   <form method="post">
     {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit">
+    {{ taskform }}
+    <input type="submit" value="Update">
   </form>
 
 </div>

@@ -25,19 +25,19 @@
               <td>{{ task.start_date }}</td>
               <td>{{ task.end_date }}</td>
               <td>{{ task.status }}</td>
-              <td><a href="{% url 'project_manager:task_item' task.id %}"><button class="btn btn-info" >View</button></a> </td>
+              <td><a href="{% url 'project_manager:update-task' task.id %}"><button class="btn btn-info" >View</button></a> </td>
             </tr>
             {% endif %}
           {% endfor %}
           </tbody>
         </table>
     {% endfor %}
-</div>
-
 {% else %}
 <p>Sorry, pal</p>
 {% endif %}
+<a href="{% url 'project_manager:create-task' %}"><button class="btn btn-primary">Create a new Task</button></a>
 
 
+</div>
 
 {% endblock %}
