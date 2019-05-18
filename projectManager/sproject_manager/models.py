@@ -11,6 +11,9 @@ class Project(models.Model):
     author = models.CharField(max_length=30)
 #    collaborators = models.ManyToManyField()
 
+    def __str__(self):
+        return self.name
+
 
 class Task(models.Model):
     name = models.CharField(max_length=30)

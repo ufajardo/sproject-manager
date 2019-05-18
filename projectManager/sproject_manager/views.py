@@ -33,6 +33,11 @@ def update_task(request, id):
     task = get_object_or_404(Task, id=id)
     taskform = TaskForm(request.POST or None, instance=task)
 
+    if request.POST:
+        if taskform.is_valid():
+            taskform.save()
+            return redirect('project_manager:index')
+
     context = {
         'task': task,
         'taskform': taskform
@@ -40,3 +45,16 @@ def update_task(request, id):
 
     return render(request, 'sproject_manager/task-details.html', context)
 
+
+def delete_task(request, id):
+    task = get_object_or_404(Task, id=id)
+
+    if request.POST:
+        Task.objects.filter(id=id).delete()
+        return redirect('project_manager:index')
+
+    context = {
+        'task': task,
+    }
+
+    return render(request, 'sproject_manager/task-delete.html', context)
