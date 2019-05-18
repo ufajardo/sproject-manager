@@ -18,8 +18,9 @@ class Project(models.Model):
 class Task(models.Model):
     name = models.CharField(max_length=30)
     description = models.TextField()
-    start_date = models.DateTimeField(auto_now=True)
-    end_date = models.DateTimeField()
+    start_date = models.DateTimeField(blank=True, null=True)
+    end_date = models.DateTimeField(blank=True, null=True)
+    expected_end_date = models.DateTimeField(blank=True, null=True)
     status_choices = (
         ("ACTIVE", "ACTIVE"),
         ("PENDING", "PENDING"),
@@ -28,10 +29,8 @@ class Task(models.Model):
     status = models.CharField(
         max_length=7,
         choices=status_choices,
-        default="ACTIVE",
+        default="PENDING",
     )
     author = models.CharField(max_length=30)
     project = models.ForeignKey('Project', on_delete=models.CASCADE)
 
-    def status_closed(self):
-        self.status.choices = "CLOSED"

@@ -20,6 +20,7 @@ app_name = 'project_manager'
 urlpatterns = [
     path('', views.index, name='index'),
     path('create-task/', views.create_task, name='create-task'),
+    path('create-proj/', views.create_proj, name='create-proj'),
     path('task-details/<int:id>/', views.update_task, name='update-task'),
     path('task-delete-confirm/<int:id>/', views.delete_task, name='delete-task'),
 ]

@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Project, Task
-from .forms import TaskForm
+from .forms import TaskForm, ProjForm
+from django.utils import timezone
 # Create your views here.
 
 def index(request):
@@ -23,10 +24,24 @@ def create_task(request):
         return redirect('project_manager:index')
 
     context = {
-        'task': task
+        'taskform': task
     }
 
     return render(request, 'sproject_manager/task-create.html', context)
+
+
+def create_proj(request):
+    proj = ProjForm(request.POST or None)
+
+    if proj.is_valid():
+        proj.save()
+        return redirect('project_manager:index')
+
+    context = {
+        'proj': proj
+    }
+
+    return render(request, 'sproject_manager/proj-create.html', context)
 
 
 def update_task(request, id):
@@ -35,8 +50,21 @@ def update_task(request, id):
 
     if request.POST:
         if taskform.is_valid():
-            taskform.save()
-            return redirect('project_manager:index')
+            data = request.POST.copy()
+            status = data.get('status')
+            if status == "ACTIVE":
+                obj = taskform.save(commit=False)
+                obj.start_date = timezone.now()
+                obj.save()
+                return redirect('project_manager:index')
+            elif status == "CLOSED":
+                obj = taskform.save(commit=False)
+                obj.end_date = timezone.now()
+                obj.save()
+                return redirect('project_manager:index')
+            elif status == "PENDING":
+                taskform.save()
+                return redirect('project_manager:index')
 
     context = {
         'task': task,

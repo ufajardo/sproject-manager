@@ -5,13 +5,27 @@
 <div class="container">
 {% if project_list %}
     {% for proj in project_list %}
+    <div class="row">
+      <div class="col-md-6">
+        <h2>{{ proj.name }}</h2>
+        <br>
+        <p>{{ proj.description }}</p>
+        <br>
+        <a href="">View Project Details</a>
+        <br>
+      </div>
+      <div class="col-md-6">
+
+      </div>
+    </div>
+
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">{{ proj.name }}</th>
               <th scope="col">Tasks</th>
               <th scope="col">Start Date</th>
               <th scope="col">End Date</th>
+              <th scope="col">Expected Meet Date</th>
               <th scope="col">Status</th>
               <th scope="col"></th>
             </tr>
@@ -20,10 +34,10 @@
           {% for task in task_list %}
             {% if task.project.id == proj.id %}
             <tr>
-              <th scope="row"></th>
-              <th>{{ task.name }}</th>
+              <th scope="row">{{ task.name }}</th>
               <td>{{ task.start_date }}</td>
               <td>{{ task.end_date }}</td>
+              <td>{{ task.expected_end_date }}</td>
               <td>{{ task.status }}</td>
               <td><a href="{% url 'project_manager:update-task' task.id %}"><button class="btn btn-info" >View</button></a> </td>
             </tr>
@@ -31,11 +45,15 @@
           {% endfor %}
           </tbody>
         </table>
+        <br>
+        <br>
+        <hr>
     {% endfor %}
 {% else %}
 <p>Sorry, pal</p>
 {% endif %}
 <a href="{% url 'project_manager:create-task' %}"><button class="btn btn-primary">Create a new Task</button></a>
+<a href="{% url 'project_manager:create-proj' %}"><button class="btn btn-primary">Create a new Project</button></a>
 
 
 </div>

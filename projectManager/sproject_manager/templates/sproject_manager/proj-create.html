@@ -7,7 +7,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <h1>Create A Task</h1>
+      <h1>Create A Project</h1>
     </div>
     <div class="col-md-6">
       <a href="{% url 'project_manager:index' %}"><button class="btn btn-primary">Home</button></a>
@@ -18,14 +18,13 @@
     {% csrf_token %}
     <div class="row">
       <div class="col-md-6">
-        {{ taskform.name|as_crispy_field }}
-        {{ taskform.description|as_crispy_field }}
+        {{ proj.name|as_crispy_field }}
+        {{ proj.description|as_crispy_field }}
       </div>
       <div class="col-md-6">
-        {{ taskform.expected_end_date|as_crispy_field }}
-        {{ taskform.status|as_crispy_field }}
-        {{ taskform.author|as_crispy_field }}
-        {{ taskform.project|as_crispy_field }}
+        {{ proj.complete_date|as_crispy_field }}
+        {{ proj.author|as_crispy_field }}
+        {{ proj.active|as_crispy_field }}
       </div>
 
     </div>
