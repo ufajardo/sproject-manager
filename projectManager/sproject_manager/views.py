@@ -74,6 +74,17 @@ def update_task(request, id):
     return render(request, 'sproject_manager/task-details.html', context)
 
 
+
+def proj_details(request, id):
+    proj = get_object_or_404(Project, id=id)
+
+    context = {
+        'proj': proj,
+    }
+
+    return render(request, 'sproject_manager/proj-details.html', context)
+
+
 def delete_task(request, id):
     task = get_object_or_404(Task, id=id)
 

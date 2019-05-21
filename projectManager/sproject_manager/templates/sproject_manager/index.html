@@ -11,7 +11,7 @@
         <br>
         <p>{{ proj.description }}</p>
         <br>
-        <a href="">View Project Details</a>
+        <a href="{% url 'project_manager:proj-details' proj.id %}">View Project Details</a>
         <br>
       </div>
       <div class="col-md-6">

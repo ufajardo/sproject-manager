@@ -13,28 +13,9 @@
     </div>
     <div class="col-md-6">
       <a href="{% url 'project_manager:index' %}"><button class="btn btn-primary">Home</button></a>
-      <a href="{% url 'project_manager:delete-task' task.id %}"><button class="btn btn-danger">Delete</button></a>
     </div>
   </div>
 
-  <form method="post">
-    {% csrf_token %}
-    <div class="row">
-      <div class="col-md-6">
-        {{ taskform.name|as_crispy_field }}
-        {{ taskform.description|as_crispy_field }}
-      </div>
-      <div class="col-md-6">
-        {{ taskform.end_date|as_crispy_field }}
-        {{ taskform.status|as_crispy_field }}
-        {{ taskform.author|as_crispy_field }}
-        {{ taskform.project|as_crispy_field }}
-      </div>
-
-    </div>
-
-    <input class="btn btn-primary" type="submit" value="Submit">
-  </form>
 
 </div>
 
