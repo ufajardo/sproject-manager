@@ -1,5 +1,7 @@
 {% extends 'sproject_manager/base.html' %}
 
+{% block title %}Main Menu{% endblock %}
+
 {% block content %}
 
 <div class="container">
@@ -11,7 +13,7 @@
         <br>
         <p>{{ proj.description }}</p>
         <br>
-        <a href="{% url 'project_manager:proj-details' proj.id %}">View Project Details</a>
+        <a class="btn btn-primary" href="{% url 'project_manager:proj-details' proj.id %}">View Project Details</a>
         <br>
       </div>
       <div class="col-md-6">
@@ -39,7 +41,7 @@
               <td>{{ task.end_date }}</td>
               <td>{{ task.expected_end_date }}</td>
               <td>{{ task.status }}</td>
-              <td><a href="{% url 'project_manager:update-task' task.id %}"><button class="btn btn-info" >View</button></a> </td>
+              <td><a href="{% url 'project_manager:update-task' task.id %}"><button class="btn btn-outline-info" >View</button></a> </td>
             </tr>
             {% endif %}
           {% endfor %}
