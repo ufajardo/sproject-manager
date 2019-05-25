@@ -8,7 +8,9 @@ verify_ssl = true
 [packages]
 django = "*"
 django-crispy-forms = "*"
-crispy-forms = "*"
+djangorestframework = "*"
+django-filters = "*"
+django-filter = "*"
 
 [requires]
 python_version = "3.7"

@@ -1,7 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.utils import timezone
+from rest_framework import generics, viewsets
+import django_filters.rest_framework
+from .serializers import ProjectSerializer, TaskSerializer
 from .models import Project, Task
 from .forms import TaskForm, ProjForm
-from django.utils import timezone
 # Create your views here.
 
 def index(request):
@@ -77,13 +80,27 @@ def update_task(request, id):
 
 def proj_details(request, id):
     proj = get_object_or_404(Project, id=id)
+    task_list = Task.objects.filter(project=id)
 
     context = {
         'proj': proj,
+        'task_list': task_list,
     }
 
     return render(request, 'sproject_manager/proj-details.html', context)
 
+
+
+class ProjectList(viewsets.ModelViewSet):
+    serializer_class = TaskSerializer
+
+    def get_queryset(self):
+        """
+        This view should return a list of all the purchases for
+        the user as determined by the username portion of the URL.
+        """
+        id = self.kwargs['id']
+        return Task.objects.filter(project=id)
 
 def delete_task(request, id):
     task = get_object_or_404(Task, id=id)
