@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ea1ceb7c-ba0a-4c1a-b3ef-ca8bd06bae4a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/sproject_manager/templates/sproject_manager/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/sproject_manager/templates/sproject_manager/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sproject_manager/templates/sproject_manager/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/sproject_manager/templates/sproject_manager/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sproject_manager/templates/sproject_manager/proj-create.html" beforeDir="false" afterPath="$PROJECT_DIR$/sproject_manager/templates/sproject_manager/proj-create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sproject_manager/templates/sproject_manager/proj-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/sproject_manager/templates/sproject_manager/proj-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sproject_manager/templates/sproject_manager/task-create.html" beforeDir="false" afterPath="$PROJECT_DIR$/sproject_manager/templates/sproject_manager/task-create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sproject_manager/templates/sproject_manager/task-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/sproject_manager/templates/sproject_manager/task-details.html" afterDir="false" />
-    </list>
+    <list default="true" id="ea1ceb7c-ba0a-4c1a-b3ef-ca8bd06bae4a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

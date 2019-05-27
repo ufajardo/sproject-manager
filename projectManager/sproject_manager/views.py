@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from rest_framework import generics, viewsets
-import django_filters.rest_framework
 from .serializers import ProjectSerializer, TaskSerializer
 from .models import Project, Task
 from .forms import TaskForm, ProjForm

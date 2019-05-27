@@ -4,6 +4,7 @@
 
 {% block cdn %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 {% endblock %}
 
 
@@ -32,6 +33,23 @@
 </div>
 
 <script>
+
+var defaultData = []
+
+
+$.ajax({
+      method: "GET",
+      url: "http://127.0.0.1:8000/api/project/1/",
+      success: function(data){
+            console.log(data[0].project.start_date)
+            console.log(data[0].project.complete_date)
+      },
+      error: function(error_data){
+            console.log("Error")
+            console.log(error_data)
+      }
+})
+
 
 var barOptions_stacked = {
     hover :{
